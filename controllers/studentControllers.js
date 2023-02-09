@@ -63,7 +63,7 @@ const createStudent = async (req, res) => {
 
 const updateStudent = async (req, res) => {
   try {
-    const student = await Students.findByIdAndUpdate(req.params.id, req.body, {
+    const student = await Students.findOneAndUpdate(req.params.name, req.body, {
       new: true,
     });
     res.status(200).json({
